@@ -13,7 +13,7 @@ const AboutSection = () => {
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             <img
               src={fleetImage}
-              alt="Fleet"
+              alt="أسطول شاحنات توريد ديزل في الإمارات"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent" />
@@ -22,17 +22,35 @@ const AboutSection = () => {
 
         {/* Content */}
         <div className="order-1 lg:order-2 animate-slide-in-right">
-          <h2 className="section-title">
-            {t("شريككم الاستراتيجي في إمدادات الطاقة", "Your Strategic Partner in Energy Supply")}
-          </h2>
+          {/* 🔥 Title SEO */}
+          <div className="flex flex-col gap-0">
+            <h2 className="section-title text-2xl md:text-3xl font-bold leading-tight">
+              {t(
+                "شركة توريد ديزل في الإمارات بخبرة وسرعة وكفاءة عالية",
+                "Diesel Supply Company in UAE with Speed, Reliability & Efficiency",
+              )}
+            </h2>
+
+            {/* تم تغيير -mt-1 إلى -mt-2 لتقريب الجملة أكثر، مع الحفاظ على كل شيء آخر */}
+            <p className="text-sm md:text-base font-semibold text-slate-600 italic -mt-3 pb-8">
+              {t(
+                "نؤمن احتياجاتكم من الطاقة بدقة، سرعة، وكفاءة لا تضاهى",
+                "Securing your energy needs with unmatched precision, speed, and efficiency",
+              )}
+            </p>
+          </div>
+
+          {/* 🔥 Description (بيع مش تعريف) */}
           <p className="section-subtitle mb-8">
             {t(
-              "شركة الرعد الثاقب لتجارة الديزل هي إحدى الشركات الرائدة في مجال توريد الديزل عالي الجودة في دولة الإمارات العربية المتحدة. نحن نفخر بتقديم حلول طاقة موثوقة ومستدامة لعملائنا في مختلف القطاعات.",
-              "ALRAAD ALTHAQEB Diesel Fuel Trading is one of the leading companies in the supply of high-quality diesel in the United Arab Emirates. We are proud to provide reliable and sustainable energy solutions to our clients across various sectors."
+              "نحن في شركة الرعد الثاقب لتجارة الديزل نقدم خدمات توريد الديزل عالية الجودة للمشاريع، المصانع، وشركات النقل في جميع أنحاء الإمارات. نضمن لكم التوصيل السريع، الجودة العالية، وأسعار تنافسية تدعم استمرارية أعمالكم بدون توقف.",
+              "At ALRAAD ALTHAQEB, we provide high-quality diesel supply services for construction projects, factories, and transport companies across the UAE. We ensure fast delivery, premium quality, and competitive pricing to keep your operations running without interruption.",
             )}
           </p>
 
+          {/* Features */}
           <div className="space-y-6">
+            {/* Mission */}
             <div className="flex gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -45,13 +63,14 @@ const AboutSection = () => {
                 </h3>
                 <p className="text-muted-foreground">
                   {t(
-                    "تقديم أفضل خدمات توريد الديزل بجودة عالية وأسعار تنافسية، مع الالتزام بأعلى معايير السلامة والاستدامة.",
-                    "To provide the best diesel supply services with high quality and competitive prices, while adhering to the highest safety and sustainability standards."
+                    "توفير خدمات توريد ديزل موثوقة وسريعة تلبي احتياجات الشركات والمشاريع مع الحفاظ على أعلى معايير الجودة والسلامة.",
+                    "To provide reliable and fast diesel supply services that meet the needs of companies and projects while maintaining the highest quality and safety standards.",
                   )}
                 </p>
               </div>
             </div>
 
+            {/* Vision */}
             <div className="flex gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -64,13 +83,14 @@ const AboutSection = () => {
                 </h3>
                 <p className="text-muted-foreground">
                   {t(
-                    "أن نكون الخيار الأول لتوريد الديزل في دولة الإمارات، ونساهم في تمكين الشركات من تحقيق أهدافها من خلال حلول طاقة موثوقة.",
-                    "To be the first choice for diesel supply in the UAE, and contribute to enabling companies to achieve their goals through reliable energy solutions."
+                    "أن نكون من أفضل شركات توريد الديزل في الإمارات من حيث الجودة والسرعة والاعتمادية.",
+                    "To become one of the leading diesel supply companies in the UAE in terms of quality, speed, and reliability.",
                   )}
                 </p>
               </div>
             </div>
 
+            {/* Values */}
             <div className="flex gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -83,12 +103,23 @@ const AboutSection = () => {
                 </h3>
                 <p className="text-muted-foreground">
                   {t(
-                    "الجودة، الموثوقية، الالتزام، والابتكار هي القيم التي نعمل بها لضمان رضا عملائنا وتحقيق التميز في كل ما نقوم به.",
-                    "Quality, reliability, commitment, and innovation are the values we work with to ensure customer satisfaction and achieve excellence in everything we do."
+                    "نلتزم بالجودة، السرعة، الشفافية، وخدمة العملاء لضمان أفضل تجربة لعملائنا.",
+                    "We are committed to quality, speed, transparency, and customer service to deliver the best experience.",
                   )}
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* 🔥 CTA خفيف */}
+          <div className="mt-8">
+            <a
+              href="https://wa.me/971555677114"
+              target="_blank"
+              className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition"
+            >
+              {t("تواصل معنا الآن", "Contact Us Now")}
+            </a>
           </div>
         </div>
       </div>

@@ -51,10 +51,27 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 70% 25%), hsl(220 60% 35%));
-    --gradient-accent: linear-gradient(135deg, hsl(30 95% 55%), hsl(45 100% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 80% 15%), hsl(220 70% 25%), hsl(220 60% 35%));
-    --gradient-overlay: linear-gradient(90deg, hsla(220, 80%, 15%, 0.95), hsla(220, 70%, 25%, 0.85));
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(220 70% 25%),
+      hsl(220 60% 35%)
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(30 95% 55%),
+      hsl(45 100% 50%)
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(220 80% 15%),
+      hsl(220 70% 25%),
+      hsl(220 60% 35%)
+    );
+    --gradient-overlay: linear-gradient(
+      90deg,
+      hsla(220, 80%, 15%, 0.95),
+      hsla(220, 70%, 25%, 0.85)
+    );
 
     /* Shadows */
     --shadow-sm: 0 2px 8px hsla(220, 70%, 15%, 0.08);
@@ -144,7 +161,7 @@ All colors MUST be HSL.
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4;
+    @apply text-3xl md:text-4xl lg:text-4xl font-semibold text-primary mb-4;
   }
 
   .section-subtitle {

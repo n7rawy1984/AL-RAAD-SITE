@@ -11,55 +11,67 @@ const ServicesSection = () => {
     {
       icon: MapPin,
       image: serviceDelivery,
-      title: t("التوريد المباشر للمواقع", "Direct Site Delivery"),
+      title: t("توريد ديزل مباشر للمواقع", "Direct Diesel Supply to Sites"),
       description: t(
-        "نوفر خدمة توصيل الديزل مباشرة إلى مواقع البناء والمشاريع بكل كفاءة وسرعة. أسطولنا الحديث جاهز للتوصيل في أي وقت ومكان.",
-        "We provide diesel delivery service directly to construction sites and projects with efficiency and speed. Our modern fleet is ready to deliver anytime, anywhere."
+        "نوفر خدمة توريد الديزل مباشرة إلى مواقع البناء والمشاريع في جميع إمارات الدولة بسرعة وكفاءة عالية.",
+        "We provide direct diesel supply to construction sites and projects across the UAE with high efficiency and fast delivery.",
       ),
     },
     {
       icon: Droplet,
       image: serviceTank,
-      title: t("تعبئة خزانات الشركات", "Company Tank Filling"),
+      title: t(
+        "تعبئة خزانات الديزل للشركات",
+        "Diesel Tank Filling for Companies",
+      ),
       description: t(
-        "خدمة متخصصة لتعبئة خزانات الوقود للمصانع والشركات. نضمن التزويد المستمر دون انقطاع لضمان سير أعمالكم بسلاسة.",
-        "Specialized service for filling fuel tanks for factories and companies. We ensure continuous supply without interruption to keep your business running smoothly."
+        "خدمة متخصصة لتعبئة خزانات الوقود للمصانع والشركات مع ضمان التزويد المستمر دون انقطاع.",
+        "Specialized diesel tank filling service for factories and companies with guaranteed continuous supply.",
       ),
     },
     {
       icon: Truck,
       image: serviceFleet,
-      title: t("إمداد أساطيل النقل", "Fleet Supply"),
+      title: t(
+        "توريد ديزل لأساطيل النقل",
+        "Diesel Supply for Transport Fleets",
+      ),
       description: t(
-        "حلول مخصصة لشركات النقل والأساطيل الكبيرة. نوفر برامج تزويد منتظمة بأسعار تنافسية تساعدكم على تحسين كفاءة التشغيل.",
-        "Customized solutions for transportation companies and large fleets. We provide regular supply programs at competitive prices to help you improve operational efficiency."
+        "حلول مخصصة لشركات النقل والأساطيل الكبيرة مع برامج توريد منتظمة بأسعار تنافسية.",
+        "Customized diesel supply solutions for transportation companies and large fleets with competitive pricing.",
       ),
     },
     {
       icon: FileText,
       image: serviceDelivery,
-      title: t("عقود التوريد المرنة", "Flexible Supply Contracts"),
+      title: t("عقود توريد ديزل مرنة", "Flexible Diesel Supply Contracts"),
       description: t(
-        "نقدم عقود توريد شهرية وسنوية مرنة تناسب احتياجاتكم. أسعار تنافسية، شروط دفع مرنة، وخدمة عملاء مخصصة.",
-        "We offer flexible monthly and annual supply contracts that suit your needs. Competitive prices, flexible payment terms, and dedicated customer service."
+        "نقدم عقود توريد شهرية وسنوية مرنة بأسعار تنافسية وشروط دفع مناسبة لاحتياجاتكم.",
+        "We offer flexible monthly and annual diesel supply contracts with competitive prices and flexible payment terms.",
       ),
     },
   ];
 
   return (
     <section id="services" className="section-container bg-muted">
+      {/* Header */}
       <div className="text-center mb-16 animate-fade-in-up">
         <h2 className="section-title text-center">
-          {t("خدمات توريد متكاملة تلبي احتياجاتكم", "Comprehensive Supply Services for Your Needs")}
+          {t(
+            "خدمات توريد الديزل في الإمارات للمشاريع والشركات",
+            "Diesel Supply Services in UAE for Projects & Companies",
+          )}
         </h2>
+
         <p className="section-subtitle mx-auto">
           {t(
-            "نوفر مجموعة شاملة من خدمات توريد الديزل المصممة خصيصاً لتلبية متطلبات أعمالكم",
-            "We provide a comprehensive range of diesel supply services designed specifically to meet your business requirements"
+            "نقدم حلول متكاملة لتوريد الديزل تشمل المشاريع، المصانع، وشركات النقل في جميع أنحاء الإمارات.",
+            "We provide complete diesel supply solutions for construction projects, factories, and transport companies across the UAE.",
           )}
         </p>
       </div>
 
+      {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, index) => (
           <div
@@ -74,18 +86,39 @@ const ServicesSection = () => {
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 to-transparent" />
+
               <div className="absolute bottom-4 left-4">
                 <div className="w-14 h-14 rounded-lg bg-accent flex items-center justify-center shadow-accent">
                   <service.icon className="h-7 w-7 text-primary-dark" />
                 </div>
               </div>
             </div>
+
             <div className="p-6">
-              <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                {service.title}
+              </h3>
+
+              <p className="text-muted-foreground leading-relaxed">
+                {service.description}
+              </p>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 🔥 CTA Section */}
+      <div className="text-center mt-12">
+        <a
+          href="https://wa.me/971555677114"
+          target="_blank"
+          className="inline-block bg-green-500 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-green-400 transition"
+        >
+          {t(
+            "اطلب توريد ديزل الآن عبر واتساب",
+            "Order Diesel Now via WhatsApp",
+          )}
+        </a>
       </div>
     </section>
   );

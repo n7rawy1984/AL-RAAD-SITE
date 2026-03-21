@@ -10,80 +10,33 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   useEffect(() => {
-    // Add JSON-LD structured data for SEO
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://lovable.dev/projects/c52abae6-e366-4827-9f3e-3293a80fab01",
-      "name": "ALRAAD ALTHAQEB Diesel Fuel Trading L.L.C",
-      "alternateName": "الرعد الثاقب لتجارة الديزل",
-      "description": "Premium 10 PPM diesel fuel supply in UAE for construction, transportation, and industrial sectors",
-      "url": "https://lovable.dev/projects/c52abae6-e366-4827-9f3e-3293a80fab01",
-      "telephone": "+971555677114",
-      "email": "MINT771144@GMAIL.COM",
-      "address": {
+      "@id": "https://www.alraad-althaqeb.com/",
+      name: "شركة الرعد الثاقب لتجارة الوقود",
+      alternateName: "ALRAAD ALTHAQEB Diesel Fuel Trading L.L.C",
+      description:
+        "توريد الديزل 10 PPM عالي الجودة للمشاريع والمصانع في جميع الإمارات",
+      url: "https://www.alraad-althaqeb.com/",
+      telephone: "+971555677114",
+      email: "mint771144@gmail.com",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "Dubai Industrial City - Saih Shuaib 3 - Office No. P2A-G01",
-        "addressLocality": "Dubai",
-        "addressCountry": "AE"
+        streetAddress:
+          "Dubai Industrial City - Saih Shuaib 3 - Office No. P2A-G01",
+        addressLocality: "Dubai",
+        addressCountry: "AE",
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "24.9989",
-        "longitude": "55.3621"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-          "opens": "08:00",
-          "closes": "18:00"
-        }
-      ],
-      "priceRange": "$$",
-      "areaServed": {
+      areaServed: {
         "@type": "Country",
-        "name": "United Arab Emirates"
+        name: "United Arab Emirates",
       },
-      "serviceType": ["Diesel Fuel Supply", "Fleet Management", "Industrial Fuel Delivery"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Diesel Supply Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Direct Site Delivery",
-              "description": "Direct diesel delivery to construction sites and projects"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Company Tank Filling",
-              "description": "Specialized service for filling fuel tanks for factories and companies"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Fleet Supply",
-              "description": "Customized solutions for transportation companies and large fleets"
-            }
-          }
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127"
-      }
+      serviceType: ["توريد ديزل", "Diesel Supply UAE", "Fuel Delivery Dubai"],
     };
 
     const script = document.createElement("script");
@@ -98,6 +51,15 @@ const Index = () => {
 
   return (
     <LanguageProvider>
+      <Helmet>
+        <title>توريد الديزل في الإمارات | شركة الرعد الثاقب</title>
+        <meta
+          name="description"
+          content="شركة الرعد الثاقب تقدم خدمات توريد الديزل 10 PPM لجميع المشاريع والمصانع في الإمارات مع توصيل سريع وأسعار تنافسية."
+        />
+        <link rel="canonical" href="https://www.alraad-althaqeb.com/" />
+      </Helmet>
+
       <div className="min-h-screen">
         <Navbar />
         <main>

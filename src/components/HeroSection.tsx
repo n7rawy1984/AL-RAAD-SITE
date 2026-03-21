@@ -1,4 +1,4 @@
-import { ArrowRight, Phone, Mail } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-truck.jpg";
 
@@ -17,72 +17,109 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image with Overlay */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Diesel Fuel Truck"
+          alt="شاحنة توريد ديزل في الإمارات"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/90 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 mb-9 section-container text-center">
         <div className="max-w-5xl mx-auto animate-fade-in-up">
-          {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mt-5 mb-6 leading-tight">
+          {/* 🔥 H1 مع مسافة بين السطور */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mt-5 mb-6 leading-[1.4]">
             {t(
-              "وقود الديزل الموثوق الذي يُبقي أعمالك متحركة",
-              "Reliable Diesel Fuel That Keeps Your Business Moving"
+              <>
+                توريد الديزل في الإمارات <br />
+                <span style={{ fontSize: "48px" }}>
+                  بخدمة سريعة وأسعار تنافسية
+                </span>
+              </>,
+              <>
+                Diesel Supply in UAE <br />
+                <span style={{ fontSize: "42px" }}>
+                  {" "}
+                  with Fast Delivery & Competitive Prices
+                </span>
+              </>,
             )}
           </h1>
 
-          {/* Sub-headline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+          {/* Trust Line */}
+          <p className="text-sm text-gray-200 mb-4">
             {t(
-              "نوفر ديزل نقي (10 PPM) مطابق للمواصفات العالمية، مع ضمان التوصيل السريع والآمن لمواقعكم في قطاعات المقاولات، النقل، والصناعة",
-              "We provide pure diesel (10 PPM) compliant with international standards, with guaranteed fast and safe delivery to your sites across construction, transportation, and industrial sectors"
+              "نخدم جميع إمارات الدولة | توصيل سريع خلال 24 ساعة",
+              "Serving all UAE | Fast delivery within 24 hours",
+            )}
+          </p>
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
+            {t(
+              "نقدم خدمات توريد الديزل 10 PPM للمصانع والمشاريع وشركات المقاولات في جميع إمارات الدولة مع توصيل سريع وآمن.",
+              "We provide 10 PPM diesel supply for factories, construction projects, and companies across the UAE with fast and secure delivery.",
             )}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            {/* زر الطلب */}
             <button
               onClick={scrollToContact}
-              className="btn-hero group flex items-center gap-2"
+              className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-300 transition flex items-center gap-2"
             >
-              {t("اطلب عرض سعر الآن", "Get a Quote Now")}
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              {t("اطلب توريد ديزل الآن", "Request Diesel Supply Now")}
+              <ArrowRight className="h-5 w-5" />
             </button>
+
+            {/* زر الاتصال */}
             <a
               href="tel:+971555677114"
-              className="btn-outline flex items-center gap-2"
+              className="bg-white text-black font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition flex items-center gap-2"
             >
               <Phone className="h-5 w-5" />
-              {t("اتصل بنا", "Call Us")}
+              {t("اتصل بنا الآن", "Call Now")}
+            </a>
+
+            {/* زر واتساب */}
+            <a
+              href="https://wa.me/971555677114"
+              target="_blank"
+              className="bg-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-green-400 transition flex items-center gap-2"
+            >
+              💬 {t("واتساب الآن", "WhatsApp Now")}
             </a>
           </div>
 
-          {/* Quick Stats */}
+          {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-card/10 backdrop-blur-sm border border-accent/20 rounded-xl p-6 hover:bg-card/20 transition-all duration-300">
-              <div className="text-4xl font-bold text-gradient mb-2">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+              <div className="text-4xl font-bold text-yellow-400 mb-2">
                 10 PPM
               </div>
-              <div className="text-primary-foreground">
+              <div className="text-white">
                 {t("ديزل عالي النقاء", "Ultra-Pure Diesel")}
               </div>
             </div>
-            <div className="bg-card/10 backdrop-blur-sm border border-accent/20 rounded-xl p-6 hover:bg-card/20 transition-all duration-300">
-              <div className="text-4xl font-bold text-gradient mb-2">24/7</div>
-              <div className="text-primary-foreground">
+
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+              <div className="text-4xl font-bold text-yellow-400 mb-2">
+                24/7
+              </div>
+              <div className="text-white">
                 {t("خدمة العملاء", "Customer Service")}
               </div>
             </div>
-            <div className="bg-card/10 backdrop-blur-sm border border-accent/20 rounded-xl p-6 hover:bg-card/20 transition-all duration-300">
-              <div className="text-4xl font-bold text-gradient mb-2">100%</div>
-              <div className="text-primary-foreground">
+
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+              <div className="text-4xl font-bold text-yellow-400 mb-2">
+                100%
+              </div>
+              <div className="text-white">
                 {t("ضمان الجودة", "Quality Guarantee")}
               </div>
             </div>
@@ -92,8 +129,8 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-accent rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse" />
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>

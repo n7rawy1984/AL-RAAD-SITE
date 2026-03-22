@@ -111,24 +111,35 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
 
   return (
     <section id="contact" className="section-container bg-muted">
+      {/* 🔥 Header */}
       <div className="text-center mb-16 animate-fade-in-up">
         <h2 className="section-title text-center">
           {t(
-            "هل أنت مستعد لضمان إمدادات وقود موثوقة؟",
-            "Ready to Ensure Reliable Fuel Supply?",
+            "اطلب توريد ديزل في الإمارات الآن بأسعار تنافسية",
+            "Order Diesel Supply in UAE Now at Competitive Prices",
           )}
         </h2>
 
         <p className="section-subtitle mx-auto">
           {t(
-            "تواصل معنا اليوم للحصول على عرض سعر مخصص ومجاني",
-            "Contact us today for a customized and free quote",
+            "تواصل معنا الآن للحصول على عرض سعر سريع وتوصيل فوري لموقعك",
+            "Contact us now for a fast quote and immediate delivery to your location",
           )}
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* Contact Info */}
         <div className="space-y-8 animate-slide-in-left">
+          {/* 🔥 زر واتساب مباشر */}
+          <a
+            href="https://wa.me/971555677114"
+            target="_blank"
+            className="block text-center bg-green-500 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-green-400 transition"
+          >
+            {t("تواصل واتساب الآن", "Chat on WhatsApp Now")}
+          </a>
+
           <div>
             <h3 className="text-2xl font-bold text-primary mb-6">
               {t("معلومات الاتصال", "Contact Information")}
@@ -136,8 +147,8 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
 
             <p className="text-muted-foreground mb-8">
               {t(
-                "نحن هنا لخدمتكم. تواصلوا معنا عبر أي من القنوات التالية",
-                "We are here to serve you. Contact us through any of the following channels",
+                "نحن جاهزون لخدمتكم على مدار الساعة",
+                "We are available to serve you anytime",
               )}
             </p>
           </div>
@@ -147,49 +158,43 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
             className="flex items-start gap-4 p-4 rounded-lg bg-card"
           >
             <Phone className="h-6 w-6 text-primary-dark" />
-
             <div>
               <h4 className="font-bold text-primary">{t("الهاتف", "Phone")}</h4>
-
               <p dir="ltr">+971 55 567 7114</p>
             </div>
           </a>
 
           <a
-            href="mailto:alraad247@gmail"
+            href="mailto:alraad247@gmail.com"
             className="flex items-start gap-4 p-4 rounded-lg bg-card"
           >
             <Mail className="h-6 w-6 text-primary-dark" />
-
             <div>
               <h4 className="font-bold text-primary">
                 {t("البريد الإلكتروني", "Email")}
               </h4>
-
-              <p>alraad247@gmail</p>
+              <p>alraad247@gmail.com</p>
             </div>
           </a>
 
           <div className="flex items-start gap-4 p-4 rounded-lg bg-card">
             <MapPin className="h-6 w-6 text-primary-dark" />
-
             <div>
               <h4 className="font-bold text-primary">
                 {t("العنوان", "Address")}
               </h4>
-
               <p>
                 {t(
                   "أبو ظبي، منطقة المفرق الصناعية",
                   "Abu Dhabi, Mafraq Industrial Area",
                 )}
               </p>
-
               <p>{t("الإمارات العربية المتحدة", "United Arab Emirates")}</p>
             </div>
           </div>
         </div>
 
+        {/* Form */}
         <div className="animate-slide-in-right">
           <form
             onSubmit={handleSubmit}
@@ -197,35 +202,29 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input
-                type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder={t("أدخل اسمك", "Enter your name")}
+                placeholder={t("اسمك", "Your Name")}
                 required
               />
-
               <Input
-                type="text"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                placeholder={t("أدخل اسم الشركة", "Enter company name")}
+                placeholder={t("اسم الشركة", "Company Name")}
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input
-                type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+971"
+                placeholder="+971 5X XXX XXXX"
                 required
               />
-
               <Input
-                type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -234,7 +233,6 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
             </div>
 
             <Input
-              type="text"
               name="quantity"
               value={formData.quantity}
               onChange={handleChange}
@@ -250,8 +248,8 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
               onChange={handleChange}
               rows={4}
               placeholder={t(
-                "أخبرنا المزيد عن احتياجاتك...",
-                "Tell us more about your needs...",
+                "اكتب تفاصيل طلبك...",
+                "Write your request details...",
               )}
             />
 
@@ -261,10 +259,9 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
               className="w-full flex items-center justify-center gap-2"
             >
               <Send className="h-5 w-5" />
-
               {loading
                 ? t("جاري الإرسال...", "Sending...")
-                : t("أرسل طلبك الآن", "Send Your Request Now")}
+                : t("اطلب عرض السعر الآن", "Get a Quote Now")}
             </Button>
           </form>
         </div>

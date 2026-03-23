@@ -179,7 +179,7 @@ const Navbar = () => {
             <Button
               onClick={toggleLanguage}
               variant="ghost"
-              className="hidden md:flex text-white hover:text-[hsl(var(--accent))]"
+              className="hidden md:flex text-white "
             >
               <Globe className="h-4 w-4 mr-1" />
               {isArabic ? "EN" : "AR"}

@@ -163,18 +163,20 @@ const BlogPost = () => {
                   ? "تواصل مع خبراء الرعد الثاقب للحصول على استشارة مجانية حول صيانة الوقود."
                   : "نوفر لك أفضل الأسعار مع توصيل فوري لجميع مناطق دبي والإمارات 24/7."}
               </p>
-              <a
-                href="https://wa.me/971555677114"
-                target="_blank"
-                rel="noreferrer"
-                className={`inline-block px-12 py-5 rounded-full font-black text-xl shadow-lg transition-all ${
-                  isTip
-                    ? "bg-white text-orange-600 hover:bg-slate-100"
-                    : "bg-blue-600 text-white hover:bg-blue-700"
-                }`}
-              >
-                تواصل عبر الواتساب
-              </a>
+              <div className="flex justify-center">
+                <a
+                  href="https://wa.me/971555677114"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`inline-block px-10 py-4 md:px-12 md:py-5 rounded-full font-black text-lg md:text-xl shadow-lg transition-all ${
+                    isTip
+                      ? "bg-white text-orange-600 hover:bg-slate-100"
+                      : "bg-blue-600 text-white hover:bg-blue-700"
+                  }`}
+                >
+                  تواصل عبر الواتساب
+                </a>
+              </div>
             </div>
           </article>
         </div>

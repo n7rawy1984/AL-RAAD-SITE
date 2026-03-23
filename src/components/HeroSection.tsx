@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="relative z-10 mb-9 section-container text-center px-4">
         <div className="max-w-5xl mx-auto animate-fade-in-up">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mt-5 mb-6 leading-[1.3] md:leading-tight">
-            {t("توريد الديزل في الإمارات", "Diesel Supply in UAE")}
+            {t("توريد الديزل في الإمارات ", "Diesel Supply in UAE ")}
             <span className="md:block md:mt-6">
               {t(
                 "بخدمة سريعة وأسعار تنافسية",

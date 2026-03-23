@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Droplet, Truck, FileText } from "lucide-react";
+import { MapPin, Droplet, Truck, FileText, MessageCircle } from "lucide-react";
 import serviceDelivery from "@/assets/service-delivery.jpg";
 import serviceTank from "@/assets/service-tank.jpg";
 import serviceFleet from "@/assets/service-fleet.jpg";
@@ -88,8 +88,9 @@ const ServicesSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 to-transparent" />
 
               <div className="absolute bottom-4 left-4">
-                <div className="w-14 h-14 rounded-lg bg-accent flex items-center justify-center shadow-accent">
-                  <service.icon className="h-7 w-7 text-primary-dark" />
+                {/* تم تعديل لون خلفية الأيقونة أيضاً ليتماشى مع البرتقالي الجديد */}
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-b from-[#ffb347] to-[#ffcc33] flex items-center justify-center shadow-md">
+                  <service.icon className="h-7 w-7 text-[#1e293b]" />
                 </div>
               </div>
             </div>
@@ -107,13 +108,20 @@ const ServicesSection = () => {
         ))}
       </div>
 
-      {/* 🔥 CTA Section */}
+      {/* 🔥 CTA Section - تم تطبيق الـ Gradient والخط والـ Hover الشيك */}
       <div className="text-center mt-12">
         <a
           href="https://wa.me/971555677114"
           target="_blank"
-          className="inline-block bg-green-500 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-green-400 transition"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 
+                     bg-gradient-to-b from-[#ffb347] to-[#ffcc33] text-[#1e293b] 
+                     px-10 py-4 rounded-2xl font-bold text-lg shadow-md 
+                     transition-all duration-300 ease-out 
+                     hover:scale-[1.02] hover:brightness-110 hover:shadow-xl 
+                     active:scale-[0.98]"
         >
+          <MessageCircle className="h-6 w-6" />
           {t(
             "اطلب توريد ديزل الآن عبر واتساب",
             "Order Diesel Now via WhatsApp",

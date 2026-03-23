@@ -17,40 +17,31 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background */}
+      {/* Background - أزرق داكن ملكي مع صورة الشاحنة */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="شاحنة توريد ديزل في الإمارات"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/95 via-[#0f172a]/80 to-[#1e293b]/40" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mb-9 section-container text-center">
+      <div className="relative z-10 mb-9 section-container text-center px-4">
         <div className="max-w-5xl mx-auto animate-fade-in-up">
-          {/* 🔥 H1 مع مسافة بين السطور */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mt-5 mb-6 leading-[1.4]">
-            {t(
-              <>
-                توريد الديزل في الإمارات <br />
-                <span style={{ fontSize: "48px" }}>
-                  بخدمة سريعة وأسعار تنافسية
-                </span>
-              </>,
-              <>
-                Diesel Supply in UAE <br />
-                <span style={{ fontSize: "42px" }}>
-                  {" "}
-                  with Fast Delivery & Competitive Prices
-                </span>
-              </>,
-            )}
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mt-5 mb-6 leading-[1.3] md:leading-tight">
+            {t("توريد الديزل في الإمارات", "Diesel Supply in UAE")}
+            <span className="md:block md:mt-6">
+              {t(
+                "بخدمة سريعة وأسعار تنافسية",
+                "with Fast Delivery & Competitive Prices",
+              )}
+            </span>
           </h1>
 
           {/* Trust Line */}
-          <p className="text-sm text-gray-200 mb-4">
+          <p className="text-sm text-gray-200 mb-4 font-medium">
             {t(
               "نخدم جميع إمارات الدولة | توصيل سريع خلال 24 ساعة",
               "Serving all UAE | Fast delivery within 24 hours",
@@ -58,79 +49,92 @@ const HeroSection = () => {
           </p>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl lg:text-2xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed">
             {t(
               "نقدم خدمات توريد الديزل 10 PPM للمصانع والمشاريع وشركات المقاولات في جميع إمارات الدولة مع توصيل سريع وآمن.",
               "We provide 10 PPM diesel supply for factories, construction projects, and companies across the UAE with fast and secure delivery.",
             )}
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            {/* زر الطلب */}
+          {/* CTA Buttons - تناسق تام (Symmetry) */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center sm:items-stretch mb-12">
+            {/* 1. زر الطلب الرئيسي */}
             <button
               onClick={scrollToContact}
-              className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-300 transition flex items-center gap-2"
+              className="w-[180px] sm:w-[200px] md:w-[220px] mx-auto sm:mx-0 px-3 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-lg transition-all duration-300 ease-out
+               bg-gradient-to-b from-[#ffb347] to-[#ffcc33] text-[#1e293b]
+               hover:scale-[1.03] hover:brightness-110 hover:shadow-xl active:scale-[0.98]
+               flex items-center justify-center gap-1.5 sm:gap-2"
             >
-              {t("اطلب توريد ديزل الآن", "Request Diesel Supply Now")}
-              <ArrowRight className="h-5 w-5" />
+              {t("اطلب ديزل الآن", "Request Diesel")}
+              <ArrowRight className="h-3.5 w-3.5 sm:h-4 w-4 md:h-5 md:w-5" />
             </button>
 
-            {/* زر الاتصال */}
-            <a
-              href="tel:+971555677114"
-              className="bg-white text-black font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition flex items-center gap-2"
-            >
-              <Phone className="h-5 w-5" />
-              {t("اتصل بنا الآن", "Call Now")}
-            </a>
-
-            {/* زر واتساب */}
+            {/* 2. زر الواتساب */}
             <a
               href="https://wa.me/971555677114"
               target="_blank"
-              className="bg-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-green-400 transition flex items-center gap-2"
+              rel="noopener noreferrer"
+              className="w-[180px] sm:w-[200px] md:w-[220px] mx-auto sm:mx-0 px-3 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-lg transition-all duration-300 ease-out
+               bg-gradient-to-b from-[#ffb347] to-[#ffcc33] text-[#1e293b]
+               hover:scale-[1.03] hover:brightness-110 hover:shadow-xl active:scale-[0.98]
+               flex items-center justify-center gap-1.5 sm:gap-2 "
             >
-              💬 {t("واتساب الآن", "WhatsApp Now")}
+              <span className="text-base sm:text-lg md:text-xl">💬</span>
+              {t("واتساب الآن", "WhatsApp Now")}
+            </a>
+
+            {/* 3. زر الاتصال الأبيض */}
+            <a
+              href="tel:+971555677114"
+              className="w-[180px] sm:w-[200px] md:w-[220px] mx-auto sm:mx-0 px-3 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-md transition-all duration-300 ease-out 
+               bg-white/95 text-[#0f172a] border border-white/20
+               hover:bg-white hover:scale-[1.03] hover:shadow-xl active:scale-[0.98]
+               flex items-center justify-center gap-1.5 sm:gap-2"
+            >
+              <Phone className="h-3.5 w-3.5 sm:h-4 w-4 md:h-5 md:w-5 text-[#ffb347]" />
+              {t("اتصل بنا", "Call Us")}
             </a>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-              <div className="text-4xl font-bold text-yellow-400 mb-2">
+          {/* Stats - تم توحيد لون الأرقام مع الأزرار */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-colors hover:bg-white/10">
+              <div
+                className="text-3xl md:text-4xl font-bold mb-1"
+                style={{ color: "hsl(var(--accent))" }}
+              >
                 10 PPM
               </div>
-              <div className="text-white">
+              <div className="text-sm md:text-base text-white">
                 {t("ديزل عالي النقاء", "Ultra-Pure Diesel")}
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-              <div className="text-4xl font-bold text-yellow-400 mb-2">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-colors hover:bg-white/10">
+              <div
+                className="text-3xl md:text-4xl font-bold mb-1"
+                style={{ color: "hsl(var(--accent))" }}
+              >
                 24/7
               </div>
-              <div className="text-white">
+              <div className="text-sm md:text-base text-white">
                 {t("خدمة العملاء", "Customer Service")}
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-              <div className="text-4xl font-bold text-yellow-400 mb-2">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-colors hover:bg-white/10">
+              <div
+                className="text-3xl md:text-4xl font-bold mb-1"
+                style={{ color: "hsl(var(--accent))" }}
+              >
                 100%
               </div>
-              <div className="text-white">
+              <div className="text-white text-sm md:text-base">
                 {t("ضمان الجودة", "Quality Guarantee")}
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>

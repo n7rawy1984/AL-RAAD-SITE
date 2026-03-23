@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,9 +24,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (loading) return;
-
     if (!formData.name || !formData.phone) {
       toast({
         title: t("بيانات ناقصة", "Missing Fields"),
@@ -39,7 +37,6 @@ const ContactSection = () => {
     }
 
     setLoading(true);
-
     const templateParams = {
       name: formData.name,
       company: formData.company || "Not provided",
@@ -56,30 +53,15 @@ const ContactSection = () => {
         templateParams,
         "9oDf7K1CgEjHTTxZS",
       );
-
-      const whatsappMessage = `${t("طلب عرض سعر جديد", "New Quote Request")}
-
-${t("الاسم", "Name")}: ${formData.name}
-${t("الشركة", "Company")}: ${formData.company || t("غير متوفر", "Not provided")}
-${t("الهاتف", "Phone")}: ${formData.phone}
-${t("البريد الإلكتروني", "Email")}: ${formData.email || t("غير متوفر", "Not provided")}
-${t("الكمية المطلوبة", "Required Quantity")}: ${formData.quantity || t("غير متوفر", "Not provided")}
-
-${t("الرسالة", "Message")}:
-${formData.message || t("لا توجد رسالة", "No message")}`;
-
-      const encodedMessage = encodeURIComponent(whatsappMessage);
-
+      const whatsappMessage = `${t("طلب عرض سعر جديد", "New Quote Request")}\n\n${t("الاسم", "Name")}: ${formData.name}\n${t("الشركة", "Company")}: ${formData.company || t("غير متوفر", "Not provided")}\n${t("الهاتف", "Phone")}: ${formData.phone}\n${t("البريد الإلكتروني", "Email")}: ${formData.email || t("غير متوفر", "Not provided")}\n${t("الكمية المطلوبة", "Required Quantity")}: ${formData.quantity || t("غير متوفر", "Not provided")}\n\n${t("الرسالة", "Message")}:\n${formData.message || t("لا توجد رسالة", "No message")}`;
       window.open(
-        `https://wa.me/971555677114?text=${encodedMessage}`,
+        `https://wa.me/971555677114?text=${encodeURIComponent(whatsappMessage)}`,
         "_blank",
       );
-
       toast({
         title: t("تم الإرسال بنجاح", "Sent Successfully"),
         description: t("سيتم التواصل معكم قريباً", "We will contact you soon"),
       });
-
       setFormData({
         name: "",
         company: "",
@@ -89,29 +71,22 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
         message: "",
       });
     } catch (error) {
-      console.error(error);
-
       toast({
         title: t("حدث خطأ", "Error"),
         description: t("فشل إرسال الرسالة", "Failed to send message"),
       });
     }
-
     setLoading(false);
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <section id="contact" className="section-container bg-muted">
-      {/* 🔥 Header */}
       <div className="text-center mb-16 animate-fade-in-up">
         <h2 className="section-title text-center">
           {t(
@@ -119,7 +94,6 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
             "Order Diesel Supply in UAE Now at Competitive Prices",
           )}
         </h2>
-
         <p className="section-subtitle mx-auto">
           {t(
             "تواصل معنا الآن للحصول على عرض سعر سريع وتوصيل فوري لموقعك",
@@ -129,14 +103,15 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Contact Info */}
         <div className="space-y-8 animate-slide-in-left">
-          {/* 🔥 زر واتساب مباشر */}
+          {/* 🔥 زر واتساب - مطبق عليه الـ Gradient واللون الصح */}
           <a
             href="https://wa.me/971555677114"
             target="_blank"
-            className="block text-center bg-green-500 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-green-400 transition"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 bg-gradient-to-b from-[#ffb347] to-[#ffcc33] text-[#1e293b] py-4 rounded-2xl font-bold text-lg shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:brightness-110 hover:shadow-xl active:scale-[0.98]"
           >
+            <MessageCircle className="h-6 w-6" />
             {t("تواصل واتساب الآن", "Chat on WhatsApp Now")}
           </a>
 
@@ -144,7 +119,6 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
             <h3 className="text-2xl font-bold text-primary mb-6">
               {t("معلومات الاتصال", "Contact Information")}
             </h3>
-
             <p className="text-muted-foreground mb-8">
               {t(
                 "نحن جاهزون لخدمتكم على مدار الساعة",
@@ -153,52 +127,45 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
             </p>
           </div>
 
-          <a
-            href="tel:+971555677114"
-            className="flex items-start gap-4 p-4 rounded-lg bg-card"
-          >
-            <Phone className="h-6 w-6 text-primary-dark" />
-            <div>
-              <h4 className="font-bold text-primary">{t("الهاتف", "Phone")}</h4>
-              <p dir="ltr">+971 55 567 7114</p>
-            </div>
-          </a>
-
-          <a
-            href="mailto:alraad247@gmail.com"
-            className="flex items-start gap-4 p-4 rounded-lg bg-card"
-          >
-            <Mail className="h-6 w-6 text-primary-dark" />
-            <div>
-              <h4 className="font-bold text-primary">
-                {t("البريد الإلكتروني", "Email")}
-              </h4>
-              <p>alraad247@gmail.com</p>
-            </div>
-          </a>
-
-          <div className="flex items-start gap-4 p-4 rounded-lg bg-card">
-            <MapPin className="h-6 w-6 text-primary-dark" />
-            <div>
-              <h4 className="font-bold text-primary">
-                {t("العنوان", "Address")}
-              </h4>
-              <p>
-                {t(
-                  "أبو ظبي، منطقة المفرق الصناعية",
-                  "Abu Dhabi, Mafraq Industrial Area",
-                )}
-              </p>
-              <p>{t("الإمارات العربية المتحدة", "United Arab Emirates")}</p>
-            </div>
+          <div className="space-y-4">
+            <a
+              href="tel:+971555677114"
+              className="flex items-start gap-4 p-4 rounded-lg bg-card border border-transparent hover:border-[#ffcc33]/30 transition-colors group"
+            >
+              <Phone className="h-6 w-6 text-[#ffcc33]" />
+              <div>
+                <h4 className="font-bold text-primary">
+                  {t("الهاتف", "Phone")}
+                </h4>
+                <p
+                  dir="ltr"
+                  className="group-hover:text-[#ffcc33] transition-colors"
+                >
+                  +971 55 567 7114
+                </p>
+              </div>
+            </a>
+            <a
+              href="mailto:alraad247@gmail.com"
+              className="flex items-start gap-4 p-4 rounded-lg bg-card border border-transparent hover:border-[#ffcc33]/30 transition-colors group"
+            >
+              <Mail className="h-6 w-6 text-[#ffcc33]" />
+              <div>
+                <h4 className="font-bold text-primary">
+                  {t("البريد الإلكتروني", "Email")}
+                </h4>
+                <p className="group-hover:text-[#ffcc33] transition-colors">
+                  alraad247@gmail.com
+                </p>
+              </div>
+            </a>
           </div>
         </div>
 
-        {/* Form */}
         <div className="animate-slide-in-right">
           <form
             onSubmit={handleSubmit}
-            className="bg-card rounded-xl p-8 shadow-lg space-y-6"
+            className="bg-card rounded-2xl p-8 shadow-lg border border-white/5 space-y-6"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input
@@ -215,7 +182,6 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
                 placeholder={t("اسم الشركة", "Company Name")}
               />
             </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input
                 name="phone"
@@ -231,7 +197,6 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
                 placeholder="email@example.com"
               />
             </div>
-
             <Input
               name="quantity"
               value={formData.quantity}
@@ -241,7 +206,6 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
                 "e.g., 5000 liters monthly",
               )}
             />
-
             <Textarea
               name="message"
               value={formData.message}
@@ -253,10 +217,15 @@ ${formData.message || t("لا توجد رسالة", "No message")}`;
               )}
             />
 
+            {/* 🔥 زر الإرسال - تدرج لوني (Gradient) + تكبير وفلاش شيك */}
             <Button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2"
+              className="w-full flex items-center justify-center gap-2 
+                         bg-gradient-to-b from-[#ffb347] to-[#ffcc33] text-[#1e293b] font-bold py-7 rounded-2xl text-lg shadow-md
+                         transition-all duration-300 ease-out
+                         hover:from-[#ffb347] hover:to-[#ffcc33] hover:scale-[1.02] hover:brightness-110 hover:shadow-xl
+                         active:scale-[0.98] border-none outline-none"
             >
               <Send className="h-5 w-5" />
               {loading

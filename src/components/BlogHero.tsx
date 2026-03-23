@@ -1,13 +1,14 @@
 import React from "react";
+import heroBg from "../assets/your-main-bg.jpg";
 
 const BlogHero = ({ title, subtitle }: { title: string; subtitle: string }) => {
   return (
     <div className="relative h-[450px] w-full flex items-center justify-center overflow-hidden">
       {/* تأكد من مسار الصورة واسمها المظبوط في assets */}
       <img
-        src="/src/assets/your-main-bg.jpg"
+        src={heroBg}
         className="absolute inset-0 w-full h-full object-cover"
-        alt="الرعد الثاقب"
+        alt="الرعد الثاقب لتجارة الديزل دبي"
       />
 
       <div className="absolute inset-0 bg-slate-900/60 shadow-inner"></div>

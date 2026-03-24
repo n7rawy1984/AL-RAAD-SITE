@@ -22,8 +22,20 @@ const Navbar = () => {
 
   // منع الاسكرول
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [isOpen]);
+  useEffect(() => {
+    setIsOpen(false);
+    document.body.style.overflow = "auto";
+  }, [location.pathname]);
 
   // Scroll effect - الشفافية فقط عند السكرول
   useEffect(() => {

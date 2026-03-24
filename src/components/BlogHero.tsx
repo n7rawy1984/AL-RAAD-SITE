@@ -3,21 +3,25 @@ import heroBg from "../assets/your-main-bg.jpg";
 
 const BlogHero = ({ title, subtitle }: { title: string; subtitle: string }) => {
   return (
-    <div className="relative h-[450px] w-full flex items-center justify-center overflow-hidden">
-      {/* تأكد من مسار الصورة واسمها المظبوط في assets */}
+    <div className="relative h-[300px] md:h-[400px] w-full flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
       <img
         src={heroBg}
+        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover"
-        alt="الرعد الثاقب لتجارة الديزل دبي"
+        alt="Diesel Supply UAE - Alraad Althaqeb"
       />
 
-      <div className="absolute inset-0 bg-slate-900/60 shadow-inner"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="relative z-10 text-center px-6 mt-10">
-        <h1 className="text-4xl md:text-6xl font-black text-white mb-4 drop-shadow-2xl tracking-tight">
+      {/* Content */}
+      <div className="relative z-10 text-center px-6">
+        <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
           {title}
         </h1>
-        <p className="text-xl text-blue-100 max-w-3xl mx-auto drop-shadow-lg leading-relaxed font-medium">
+
+        <p className="text-sm md:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       </div>
@@ -25,5 +29,4 @@ const BlogHero = ({ title, subtitle }: { title: string; subtitle: string }) => {
   );
 };
 
-// 🚨 ده السطر اللي ناقص ومسبب المشكلة 🚨
 export default BlogHero;

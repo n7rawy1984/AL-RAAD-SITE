@@ -8,10 +8,11 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; // 🚨 تأكد من استيراد الفوتر هنا
+import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -24,15 +25,16 @@ const App = () => {
             <Toaster />
             <Sonner />
             <BrowserRouter>
-              <Navbar /> {/* 🚨 الناف بار فوق */}
+              <ScrollToTop />
+              <Navbar />
+              {/* تم إزالة div اللي كان بيضيف padding-top */}
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
-              <Footer />{" "}
-              {/* 🚨 الفوتر تحت الـ Routes عشان يظهر في كل الصفحات */}
+              <Footer />
               <FloatingWhatsApp />
             </BrowserRouter>
           </TooltipProvider>

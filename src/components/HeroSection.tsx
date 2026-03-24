@@ -15,7 +15,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="pt-16 relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background - أزرق داكن ملكي مع صورة الشاحنة */}
       <div className="absolute inset-0 z-0">

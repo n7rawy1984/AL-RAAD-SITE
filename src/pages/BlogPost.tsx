@@ -1,94 +1,107 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { posts } from "../data/blogData";
 import { Helmet } from "react-helmet-async";
-import BlogHero from "../components/BlogHero";
+import { FaWhatsapp, FaArrowRight, FaClock } from "react-icons/fa";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const post = posts.find((p) => p.slug === slug);
 
-  if (!post) {
+  if (!post)
     return (
-      <div className="p-40 text-center font-bold text-slate-900 min-h-screen">
+      <div className="p-40 text-center text-primary-dark font-bold">
         المقال غير موجود
       </div>
     );
-  }
-
-  const isTip = post.category === "tip";
-
-  // 🔥 صورة ديناميك (من public)
-  const imagePath = `/images/${slug}.jpg`;
 
   return (
-    <>
-      <div className="pt-16 bg-[#0f172a] min-h-screen">
-        <div className="max-w-5xl mx-auto px-4 py-8 md:py-12">
-          <Helmet>
-            <title>{post.title} | الرعد الثاقب</title>
-            <meta name="description" content={post.excerpt} />
-            <link
-              rel="canonical"
-              href={`https://alraad-althaqeb.com/blog/${slug}`}
+    <div className="min-h-screen bg-background" dir="rtl">
+      <Helmet>
+        <title>{post.title} | الرعد الثاقب</title>
+        <meta name="description" content={post.excerpt} />
+        <meta
+          name="description"
+          content={post.metaDescription || post.excerpt}
+        />
+
+        <meta property="og:title" content={post.title} />
+        <meta
+          property="og:description"
+          content={post.metaDescription || post.excerpt}
+        />
+      </Helmet>
+
+      {/* Header التدرج الفخم */}
+      <div className="pt-24 pb-48 bg-gradient-to-br from-primary-dark via-[#1e293b] to-primary-dark relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center text-gold hover:text-white transition mb-8 group"
+          >
+            <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition" />
+            العودة للمدونة
+          </Link>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+            {post.title}
+          </h1>
+          <div className="flex items-center justify-center gap-6 text-slate-400">
+            <span className="flex items-center gap-2">
+              <FaClock className="text-gold" /> {post.date}
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <span className="text-gold font-bold">
+              {post.category === "tip" ? "نصيحة تزويد" : "أخبار القطاع"}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* المقال */}
+      <div className="max-w-4xl mx-auto px-4 -mt-32 pb-20 relative z-20">
+        <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-border">
+          {/* Main Image */}
+          <div className="w-full h-[300px] md:h-[500px]">
+            <img
+              src={`/images/${slug}.jpg`}
+              alt={post.title}
+              className="w-full h-full object-cover"
+              onError={(e) => (e.currentTarget.src = "/images/default.jpg")}
+            />
+          </div>
+
+          <div className="p-8 md:p-16">
+            <div
+              className="prose prose-lg md:prose-xl max-w-none prose-slate prose-headings:text-primary-dark prose-headings:font-black prose-p:leading-[1.8] prose-strong:text-accent-dark"
+              dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
-            <meta property="og:title" content={post.title} />
-            <meta property="og:description" content={post.excerpt} />
-            <meta
-              property="og:image"
-              content={`https://alraad-althaqeb.com/images/${slug}.jpg`}
-            />
-          </Helmet>
-
-          <div dir="rtl">
-            <BlogHero
-              title={post.title}
-              subtitle={`${isTip ? "نصيحة" : "مقال"} - ${post.date}`}
-            />
-
-            <div className="bg-white pb-20 px-4 md:px-6">
-              <div className="bg-white pt-10 pb-20 px-4 md:px-6 relative z-10"></div>
-              <article className="max-w-3xl mx-auto mt-6 bg-white p-6 md:p-10 rounded-3xl shadow relative z-10">
-                {/* 🔥 عنوان المقال (مهم جداً SEO) */}
-                <h1 className="text-2xl md:text-4xl font-black text-slate-900 mb-6 leading-tight">
-                  {post.title}
-                </h1>
-                {/* ✅ صورة بدون لاج */}
-                <div className="w-full h-[250px] md:h-[400px] mb-8 overflow-hidden rounded-2xl bg-gray-100 border">
-                  <img
-                    src={imagePath}
-                    alt={post.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        "/images/default.jpg";
-                    }}
-                  />
+            {/* CTA Box - تحويل العميل لطلب الخدمة */}
+            <div className="mt-16 bg-primary-dark rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-accent/20 to-transparent"></div>
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="text-center md:text-right">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2 text-gold">
+                    جاهز لتزويد منشأتك بالديزل؟
+                  </h3>
+                  <p className="text-slate-300">
+                    أفضل جودة ديزل في الإمارات تصلك أينما كنت.
+                  </p>
                 </div>
-
-                <div
-                  className="blog-content"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
-                />
-
-                {/* CTA */}
-                <div className="mt-12 p-8 rounded-2xl text-white text-center bg-slate-900">
-                  <h3 className="text-2xl font-bold mb-3">اطلب الديزل الآن</h3>
-                  <a
-                    href="https://wa.me/971555677114"
-                    target="_blank"
-                    className="bg-blue-600 px-6 py-3 rounded-full inline-block mt-4"
-                  >
-                    واتساب
-                  </a>
-                </div>
-              </article>
+                <a
+                  href="https://wa.me/971555677114"
+                  target="_blank"
+                  className="bg-gold hover:bg-white text-primary-dark px-10 py-4 rounded-full font-black text-lg transition-all transform hover:scale-105 shadow-xl flex items-center gap-3"
+                >
+                  <FaWhatsapp className="text-2xl" />
+                  اطلب الآن
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

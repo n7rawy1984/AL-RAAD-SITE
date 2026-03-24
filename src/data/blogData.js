@@ -731,7 +731,7 @@ export const posts = [
   },
   {
     id: 32,
-    slug: "fuel-tank-maintenance-cleaning-uae",
+    slug: "industrial-fuel-tank-cleaning-dubai",
     title: "أهمية صيانة وتنظيف خزانات الديزل في أجواء الإمارات الحارة",
     date: "4 أبريل 2026",
     excerpt:
@@ -751,7 +751,7 @@ export const posts = [
   },
   {
     id: 33,
-    slug: "prevent-diesel-fuel-contamination-dubai",
+    slug: "protect-generator-diesel-from-contamination-dubai",
     title: "كيف تمنع تلوث ديزل المولدات الكهربائية في مواقع البناء بدبي؟",
     date: "5 أبريل 2026",
     excerpt:
@@ -770,7 +770,7 @@ export const posts = [
   },
   {
     id: 34,
-    slug: "optimize-diesel-consumption-fleet-dubai",
+    slug: "reduce-fleet-diesel-usage-uae",
     title: "نصائح لتقليل استهلاك ديزل أسطول الشاحنات في الإمارات",
     date: "6 أبريل 2026",
     excerpt:
@@ -789,7 +789,7 @@ export const posts = [
   },
   {
     id: 35,
-    slug: "diesel-fuel-filtering-importance-uae",
+    slug: "diesel-filtration-best-practices-uae",
     title: "أهمية تصفية وفلترة الديزل قبل استخدامه في المعدات الثقيلة",
     date: "7 أبريل 2026",
     excerpt:
@@ -808,7 +808,7 @@ export const posts = [
   },
   {
     id: 36,
-    slug: "diesel-storage-safety-rules-construction-sites",
+    slug: "construction-site-diesel-storage-safety-uae",
     title: "قواعد السلامة لتخزين الديزل في مواقع البناء بالإمارات",
     date: "8 أبريل 2026",
     excerpt:
@@ -826,7 +826,7 @@ export const posts = [
   },
   {
     id: 37,
-    slug: "protect-diesel-generators-overheating-dubai",
+    slug: "prevent-generator-overheating-dubai-summer",
     title: "كيف تحمي مولدات الديزل من ارتفاع الحرارة في صيف دبي؟",
     date: "9 أبريل 2026",
     excerpt:

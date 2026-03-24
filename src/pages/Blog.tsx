@@ -1,80 +1,106 @@
 import { posts } from "../data/blogData";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { FaGasPump, FaArrowLeft, FaChevronLeft } from "react-icons/fa";
+import { FaGasPump, FaChevronLeft } from "react-icons/fa";
 
 const Blog = () => {
   return (
     <div className="min-h-screen bg-background" dir="rtl">
       <Helmet>
-        <title>المدونة | الرعد الثاقب لتوريد الديزل</title>
+        <title>مدونة الرعد الثاقب | خبراء توريد الديزل في الإمارات</title>
+        <meta
+          name="description"
+          content="اكتشف أحدث المقالات والنصائح الاحترافية حول توريد واستهلاك الديزل في دبي والإمارات."
+        />
       </Helmet>
 
-      {/* Hero Section مع خلفية مميزة */}
-
-      <div className="relative pt-32 pb-20 bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 opacity-20 group">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-accent-dark rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
+      {/* --- الـ Hero Section المدمج --- */}
+      <div className="relative pt-32 pb-24 bg-primary-dark overflow-hidden">
+        {/* تأثيرات خلفية فخمة */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent-dark rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gold rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
         </div>
 
+        {/* نقوش كربونية خفيفة للخلفية */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6">
-            مركز <span className="text-gold">المعرفة</span> والوقود
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-bold mb-6">
+            <FaGasPump className="animate-pulse" />
+            <span>المصدر الأول للطاقة في الإمارات</span>
+          </div>
+          <h1 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tight">
+            مركز <span className="text-gold font-outline-2">المعرفة</span>{" "}
+            والوقود
           </h1>
-          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            اكتشف أحدث التحليلات والنصائح في عالم توريد الديزل والطاقة في
-            الإمارات
+          <p className="text-slate-300 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium">
+            دليلك الشامل لأحدث تحليلات سوق الديزل، نصائح التوفير، وحلول الطاقة
+            اللوجستية.
           </p>
+          <div className="mt-8 flex justify-center items-center gap-3">
+            <div className="w-16 h-1 bg-gold rounded-full"></div>
+            <div className="w-4 h-1 bg-white/30 rounded-full"></div>
+            <div className="w-4 h-1 bg-white/30 rounded-full"></div>
+          </div>
         </div>
       </div>
 
-      {/* Grid المقالات */}
-      <div className="max-w-7xl mx-auto px-4 py-16 -mt-10 relative z-20">
+      {/* --- شبكة المقالات --- */}
+      <div className="max-w-7xl mx-auto px-4 py-16 -mt-12 relative z-20">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}
-              className="group bg-card border border-border rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col"
+              className="group bg-card border border-border rounded-[2rem] overflow-hidden shadow-sm 
+             md:hover:shadow-2xl md:hover:-translate-y-3 transition-all duration-300 
+             flex flex-col smooth-scroll-fix"
+              // لاحظ إضافة md: قبل الـ hover عشان ميتفعلش غير على الكمبيوتر بس
             >
-              {/* Image Container */}
+              {/* حاوية الصورة */}
               <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 z-10"></div>
                 <img
-                  src={`/images/${post.slug}.jpg`}
+                  src="/images/raad.jpg"
                   alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  onError={(e) => (e.currentTarget.src = "/images/default.jpg")}
+                  loading="lazy" // يحمل الصور فقط لما تظهر قدام العميل
+                  decoding="async" // يفك تشفير الصورة بعيداً عن السكرول
+                  className="w-full h-full object-cover transition-transform duration-500 will-change-transform group-hover:scale-110 shadow-none hover:shadow-none"
+                  // نصيحة: قلل مدة الـ duration لـ 500ms بدل 700ms عشان الموبايل ميهنجش
                 />
-                <div className="absolute top-4 right-4 z-20">
+                <div className="absolute top-5 right-5 z-20">
                   <span
-                    className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg ${
+                    className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] shadow-2xl ${
                       post.category === "tip"
                         ? "bg-gold text-primary-dark"
                         : "bg-accent text-white"
                     }`}
                   >
-                    {post.category === "tip" ? "نصيحة" : "مقال"}
+                    {post.category === "tip" ? "نصيحة ذهبية" : "مقال فني"}
                   </span>
                 </div>
               </div>
 
-              {/* Content */}
+              {/* محتوى الكارت */}
               <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
+                <div className="flex items-center gap-2 text-muted-foreground text-xs font-bold mb-4">
                   <FaGasPump className="text-gold" />
                   <span>{post.date}</span>
                 </div>
-                <h2 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                <h2 className="text-xl font-black text-foreground mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-snug">
                   {post.title}
                 </h2>
-                <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-6">
+                <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-8">
                   {post.excerpt}
                 </p>
-                <div className="mt-auto flex items-center text-primary font-bold group-hover:gap-3 transition-all">
-                  <span>اقرأ المزيد</span>
-                  <FaChevronLeft className="mr-2 text-xs" />
+                <div className="mt-auto flex items-center justify-between pt-4 border-t border-border">
+                  <span className="text-primary font-black text-sm uppercase tracking-wider">
+                    اقرأ المزيد
+                  </span>
+                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                    <FaChevronLeft className="text-xs" />
+                  </div>
                 </div>
               </div>
             </Link>

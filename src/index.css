@@ -237,3 +237,11 @@ All colors MUST be HSL.
     transform: translateX(0);
   }
 }
+@layer utilities {
+  .smooth-scroll-fix {
+    backface-visibility: hidden;
+    perspective: 1000;
+    will-change: transform;
+    -webkit-overflow-scrolling: touch; /* لتحسين السكرول في آيفون */
+  }
+}

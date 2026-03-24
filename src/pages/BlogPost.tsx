@@ -2,10 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import { posts } from "../data/blogData";
 import { Helmet } from "react-helmet-async";
 import { FaWhatsapp, FaArrowRight, FaClock } from "react-icons/fa";
-
+import { useState } from "react";
 const BlogPost = () => {
   const { slug } = useParams();
   const post = posts.find((p) => p.slug === slug);
+  const [imgError, setImgError] = useState(false);
 
   if (!post)
     return (

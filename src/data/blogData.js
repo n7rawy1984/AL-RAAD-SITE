@@ -233,7 +233,7 @@ export const posts = [
   },
   // أضف هذه المقالات مع المقالات الموجودة
   {
-    id: 3,
+    id: 11,
     slug: "diesel-price-analysis-uae-2026",
     title: "تحليل أسعار الديزل في الإمارات 2026: كيف تؤثر العوامل العالمية؟",
     date: "24 مارس 2026",
@@ -262,7 +262,7 @@ export const posts = [
   `,
   },
   {
-    id: 4,
+    id: 12,
     slug: "environmental-impact-low-sulfur-diesel",
     title: "الأثر البيئي للديزل منخفض الكبريت في الإمارات",
     date: "25 مارس 2026",
@@ -285,7 +285,7 @@ export const posts = [
   `,
   },
   {
-    id: 5,
+    id: 13,
     slug: "diesel-fleet-management-tips",
     title: "دليل إدارة أسطول الشاحنات: كيف تخفض تكاليف الديزل 30%؟",
     date: "26 مارس 2026",
@@ -309,7 +309,7 @@ export const posts = [
   `,
   },
   {
-    id: 6,
+    id: 14,
     slug: "diesel-generator-maintenance-guide",
     title: "الدليل الشامل لصيانة مولدات الديزل في المناخ الحار",
     date: "27 مارس 2026",
@@ -338,7 +338,7 @@ export const posts = [
   `,
   },
   {
-    id: 7,
+    id: 15,
     slug: "diesel-fuel-logistics-challenges-uae",
     title: "تحديات لوجستيات توريد الديزل في الإمارات وكيف نتغلب عليها",
     date: "28 مارس 2026",
@@ -367,7 +367,7 @@ export const posts = [
   `,
   },
   {
-    id: 8,
+    id: 16,
     slug: "diesel-quality-tests-10ppm",
     title: "كيف يتم اختبار جودة ديزل 10PPM؟ دليل المختبرات والمعايير",
     date: "29 مارس 2026",
@@ -397,7 +397,7 @@ export const posts = [
   `,
   },
   {
-    id: 9,
+    id: 17,
     slug: "diesel-fuel-tax-uae-businesses",
     title: "ضريبة الديزل في الإمارات: كل ما تحتاج معرفته للشركات",
     date: "30 مارس 2026",
@@ -425,7 +425,7 @@ export const posts = [
   `,
   },
   {
-    id: 10,
+    id: 18,
     slug: "diesel-vs-gasoline-comparison-uae",
     title: "الديزل مقابل البنزين: أيهما أفضل لعملك في الإمارات؟",
     date: "31 مارس 2026",
@@ -454,7 +454,7 @@ export const posts = [
   `,
   },
   {
-    id: 11,
+    id: 19,
     slug: "diesel-fuel-storage-tanks-safety",
     title: "دليل سلامة خزانات تخزين الديزل في المواقع الصناعية",
     date: "1 أبريل 2026",
@@ -485,7 +485,7 @@ export const posts = [
   `,
   },
   {
-    id: 12,
+    id: 20,
     slug: "diesel-fuel-future-uae-2030",
     title: "مستقبل الديزل في الإمارات 2030: التحديات والفرص",
     date: "2 أبريل 2026",
@@ -517,8 +517,8 @@ export const posts = [
   // --- الـ 10 نصائح السريعة (Quick Tips) ---
 
   {
-    id: 11,
-    slug: "check-diesel-quality-10ppm-uae",
+    id: 21,
+    slug: "original-vs-adulterated-diesel-10ppm-guide",
     title: "كيف تتأكد من جودة ديزل 10PPM عند الاستلام في الموقع؟",
     date: "28 مارس 2026",
     metaDescription:
@@ -537,7 +537,7 @@ export const posts = [
     `,
   },
   {
-    id: 12,
+    id: 22,
     slug: "fuel-tank-maintenance-cleaning-uae",
     title: "أهمية صيانة وتنظيف خزانات الديزل في أجواء الإمارات الحارة",
     date: "28 مارس 2026",
@@ -559,7 +559,7 @@ export const posts = [
     `,
   },
   {
-    id: 13,
+    id: 23,
     slug: "prevent-diesel-fuel-contamination-dubai",
     title: "كيف تمنع تلوث ديزل المولدات الكهربائية في مواقع البناء بدبي؟",
     date: "29 مارس 2026",
@@ -579,7 +579,7 @@ export const posts = [
     `,
   },
   {
-    id: 14,
+    id: 24,
     slug: "optimize-diesel-consumption-fleet-dubai",
     title: "نصائح لتقليل استهلاك ديزل أسطول الشاحنات في الإمارات",
     date: "29 مارس 2026",
@@ -599,7 +599,7 @@ export const posts = [
     `,
   },
   {
-    id: 15,
+    id: 25,
     slug: "diesel-fuel-filtering-importance-uae",
     title: "أهمية تصفية وفلترة الديزل قبل استخدامه في المعدات الثقيلة",
     date: "30 مارس 2026",
@@ -619,8 +619,8 @@ export const posts = [
     `,
   },
   {
-    id: 16,
-    slug: "check-fuel-meter-accuracy-dubai-supplies",
+    id: 26,
+    slug: "how-to-detect-diesel-meter-tampering-dubai",
     title: "كيف تتأكد من دقة عدادات الديزل عند الاستلام في دبي؟",
     date: "30 مارس 2026",
     metaDescription:
@@ -639,7 +639,7 @@ export const posts = [
     `,
   },
   {
-    id: 17,
+    id: 27,
     slug: "diesel-storage-safety-rules-construction-sites",
     title: "قواعد السلامة لتخزين الديزل في مواقع البناء بالإمارات",
     date: "31 مارس 2026",
@@ -657,7 +657,7 @@ export const posts = [
     `,
   },
   {
-    id: 18,
+    id: 28,
     slug: "protect-diesel-generators-overheating-dubai",
     title: "كيف تحمي مولدات الديزل من ارتفاع الحرارة في صيف دبي؟",
     date: "31 مارس 2026",
@@ -675,7 +675,7 @@ export const posts = [
     `,
   },
   {
-    id: 19,
+    id: 29,
     slug: "diesel-contamination-water-detection-dubai",
     title: "كيف تكتشف وجود ماء في ديزل المولدات؟",
     date: "1 أبريل 2026",
@@ -692,8 +692,8 @@ export const posts = [
     `,
   },
   {
-    id: 20,
-    slug: "check-fuel-meter-accuracy-dubai-supplies-2",
+    id: 30,
+    slug: "check-fuel-meter-accuracy-dubai-supplies",
     title: "كيف تتأكد من دقة عدادات الديزل عند الاستلام في دبي؟",
     date: "1 أبريل 2026",
     excerpt:
@@ -711,7 +711,7 @@ export const posts = [
   },
   // أضف هذه النصائح مع النصائح الموجودة
   {
-    id: 13,
+    id: 31,
     slug: "check-diesel-quality-10ppm-uae",
     title: "كيف تتأكد من جودة ديزل 10PPM عند الاستلام في الموقع؟",
     date: "3 أبريل 2026",
@@ -730,7 +730,7 @@ export const posts = [
   `,
   },
   {
-    id: 14,
+    id: 32,
     slug: "fuel-tank-maintenance-cleaning-uae",
     title: "أهمية صيانة وتنظيف خزانات الديزل في أجواء الإمارات الحارة",
     date: "4 أبريل 2026",
@@ -750,7 +750,7 @@ export const posts = [
   `,
   },
   {
-    id: 15,
+    id: 33,
     slug: "prevent-diesel-fuel-contamination-dubai",
     title: "كيف تمنع تلوث ديزل المولدات الكهربائية في مواقع البناء بدبي؟",
     date: "5 أبريل 2026",
@@ -769,7 +769,7 @@ export const posts = [
   `,
   },
   {
-    id: 16,
+    id: 34,
     slug: "optimize-diesel-consumption-fleet-dubai",
     title: "نصائح لتقليل استهلاك ديزل أسطول الشاحنات في الإمارات",
     date: "6 أبريل 2026",
@@ -788,7 +788,7 @@ export const posts = [
   `,
   },
   {
-    id: 17,
+    id: 35,
     slug: "diesel-fuel-filtering-importance-uae",
     title: "أهمية تصفية وفلترة الديزل قبل استخدامه في المعدات الثقيلة",
     date: "7 أبريل 2026",
@@ -807,7 +807,7 @@ export const posts = [
   `,
   },
   {
-    id: 18,
+    id: 36,
     slug: "diesel-storage-safety-rules-construction-sites",
     title: "قواعد السلامة لتخزين الديزل في مواقع البناء بالإمارات",
     date: "8 أبريل 2026",
@@ -825,7 +825,7 @@ export const posts = [
   `,
   },
   {
-    id: 19,
+    id: 37,
     slug: "protect-diesel-generators-overheating-dubai",
     title: "كيف تحمي مولدات الديزل من ارتفاع الحرارة في صيف دبي؟",
     date: "9 أبريل 2026",
@@ -843,7 +843,7 @@ export const posts = [
   `,
   },
   {
-    id: 20,
+    id: 38,
     slug: "diesel-fuel-cost-saving-strategies",
     title: "5 استراتيجيات فعالة لخفض تكاليف الديزل في شركتك",
     date: "10 أبريل 2026",
@@ -865,8 +865,8 @@ export const posts = [
   `,
   },
   {
-    id: 21,
-    slug: "check-fuel-meter-accuracy-dubai-supplies",
+    id: 39,
+    slug: "diesel-tanker-meter-calibration-standards-uae",
     title: "كيف تتأكد من دقة عدادات الديزل عند الاستلام في دبي؟",
     date: "11 أبريل 2026",
     excerpt:
@@ -884,7 +884,7 @@ export const posts = [
   `,
   },
   {
-    id: 22,
+    id: 40,
     slug: "winter-diesel-preparation-uae",
     title: "كيف تستعد لفصل الشتاء؟ نصائح لتخزين الديزل في الأجواء الباردة",
     date: "12 أبريل 2026",

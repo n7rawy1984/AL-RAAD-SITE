@@ -21,7 +21,7 @@ const BlogPost = () => {
     );
   }
 
-  const imageSrc = imgError ? "/images/default.jpg" : `/images/${slug}.jpg`;
+  const imageSrc = imgError ? "/images/default.webp" : `/images/${slug}.jpg`;
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">

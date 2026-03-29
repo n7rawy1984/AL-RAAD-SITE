@@ -184,13 +184,13 @@ const BlogPost = () => {
                 </div>
 
                 <a
-                  href="https://wa.me/971555677114"
+                  href="https://wa.me/971544099266?text=مرحبًا، أريد عرض سعر لتوريد الديزل"
                   target="_blank"
                   rel="noreferrer"
                   className="bg-gold hover:bg-white text-primary-dark px-10 py-4 rounded-full font-black text-lg transition-all transform hover:scale-105 shadow-xl flex items-center gap-3"
                 >
                   <FaWhatsapp className="text-2xl" />
-                  اطلب الآن
+                  احصل على أفضل سعر ديزل الآن عبر واتساب{" "}
                 </a>
               </div>
             </div>

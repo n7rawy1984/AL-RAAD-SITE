@@ -4,6 +4,26 @@ import { Helmet } from "react-helmet-async";
 import { FaWhatsapp, FaArrowRight, FaClock } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
+function buildMetaDescription(post) {
+  if (post.metaDescription && post.metaDescription.trim() !== "") {
+    return post.metaDescription;
+  }
+
+  const plainText = (post.content || "")
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const baseText =
+    post.excerpt && post.excerpt.length > 50
+      ? post.excerpt
+      : plainText.substring(0, 150);
+
+  const finalText = baseText.substring(0, 155);
+
+  return `${finalText}... | الرعد الثاقب`;
+}
+
 const BlogPost = () => {
   const { slug } = useParams();
   const post = posts.find((p) => p.slug === slug);
@@ -26,18 +46,78 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-background" dir="rtl">
       <Helmet>
-        <title>{post.title} | الرعد الثاقب</title>
+        <title>{post.seoTitle || `${post.title} | الرعد الثاقب`}</title>
+
         <meta
           name="description"
           content={post.metaDescription || post.excerpt}
         />
-        <meta property="og:title" content={post.title} />
+
+        <link
+          rel="canonical"
+          href={`https://alraad-althaqeb.com/blog/${post.slug}`}
+        />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.seoTitle || post.title} />
         <meta
           property="og:description"
           content={post.metaDescription || post.excerpt}
         />
-      </Helmet>
+        <meta
+          property="og:url"
+          content={`https://alraad-althaqeb.com/blog/${post.slug}`}
+        />
+        <meta
+          property="og:image"
+          content={
+            post.ogImage ||
+            `https://alraad-althaqeb.com/images/${post.slug}.jpg`
+          }
+        />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.seoTitle || post.title} />
+        <meta name="twitter:description" content={buildMetaDescription(post)} />
+        <meta
+          name="twitter:image"
+          content={
+            post.ogImage ||
+            `https://alraad-althaqeb.com/images/${post.slug}.jpg`
+          }
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.seoTitle || post.title,
+            description: post.metaDescription || post.excerpt,
+            image: [
+              post.ogImage ||
+                `https://alraad-althaqeb.com/images/${post.slug}.jpg`,
+            ],
+            author: {
+              "@type": "Organization",
+              name: "ALRAAD ALTHAQEB",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ALRAAD ALTHAQEB",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://alraad-althaqeb.com/images/logo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://alraad-althaqeb.com/blog/${post.slug}`,
+            },
+            datePublished: post.datePublished,
+            dateModified: post.dateModified || post.datePublished,
+          })}
+        </script>
+      </Helmet>
       <div className="pt-24 pb-48 bg-gradient-to-br from-primary-dark via-[#1e293b] to-primary-dark relative overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
 
@@ -72,10 +152,13 @@ const BlogPost = () => {
             <img
               src={imageSrc}
               alt={post.title}
+              width="1200"
+              height="675"
               className="w-full h-full object-cover"
-              loading="lazy"
+              loading="eager"
               decoding="async"
-              onError={() => {
+              fetchPriority="high"
+              onError={(e) => {
                 if (!imgError) setImgError(true);
               }}
             />

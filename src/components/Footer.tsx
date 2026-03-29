@@ -1,3 +1,5 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Phone,
@@ -9,8 +11,9 @@ import {
   Instagram,
 } from "lucide-react";
 
-const Footer = () => {
+const FooterComponent = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (id: string) => {
@@ -24,7 +27,6 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold text-accent mb-4">
               {t("الرعد الثاقب", "ALRAAD ALTHAQEB")}
@@ -32,9 +34,10 @@ const Footer = () => {
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
               {t(
                 "شريكك الموثوق في توريد الديزل عالي الجودة في دولة الإمارات",
-                "Your trusted partner for high-quality diesel supply in the UAE"
+                "Your trusted partner for high-quality diesel supply in the UAE",
               )}
             </p>
+
             <div className="flex gap-3">
               <a
                 href="#"
@@ -63,22 +66,40 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-bold mb-4">
               {t("روابط سريعة", "Quick Links")}
             </h4>
             <ul className="space-y-2">
               {[
-                { id: "home", label: t("الرئيسية", "Home") },
-                { id: "about", label: t("من نحن", "About") },
-                { id: "services", label: t("خدماتنا", "Services") },
-                { id: "sectors", label: t("القطاعات", "Sectors") },
-                { id: "contact", label: t("تواصل معنا", "Contact") },
+                { id: "home", label: t("الرئيسية", "Home"), isPage: false },
+                { id: "about", label: t("من نحن", "About"), isPage: false },
+                {
+                  id: "services",
+                  label: t("خدماتنا", "Services"),
+                  isPage: false,
+                },
+                {
+                  id: "sectors",
+                  label: t("القطاعات", "Sectors"),
+                  isPage: false,
+                },
+                { id: "blog", label: t("المدونة", "Blog"), isPage: true },
+                {
+                  id: "contact",
+                  label: t("تواصل معنا", "Contact"),
+                  isPage: false,
+                },
               ].map((link) => (
                 <li key={link.id}>
                   <button
-                    onClick={() => scrollToSection(link.id)}
+                    onClick={() => {
+                      if (link.isPage) {
+                        navigate("/blog");
+                      } else {
+                        scrollToSection(link.id);
+                      }
+                    }}
                     className="text-primary-foreground/80 hover:text-accent transition-colors"
                   >
                     {link.label}
@@ -88,7 +109,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="text-lg font-bold mb-4">
               {t("خدماتنا", "Our Services")}
@@ -101,7 +121,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-lg font-bold mb-4">
               {t("اتصل بنا", "Contact Us")}
@@ -112,15 +131,17 @@ const Footer = () => {
                 className="flex items-start gap-2 text-primary-foreground/80 hover:text-accent transition-colors"
               >
                 <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span dir="ltr">+971 544099266 </span>
+                <span dir="ltr">+971 544099266</span>
               </a>
+
               <a
-                href="mailto:alraad247@gmail"
+                href="mailto:alraad247@gmail.com"
                 className="flex items-start gap-2 text-primary-foreground/80 hover:text-accent transition-colors break-all"
               >
                 <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span>alraad247@gmail</span>
+                <span>alraad247@gmail.com</span>
               </a>
+
               <div className="flex items-start gap-2 text-primary-foreground/80">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
                 <span>
@@ -131,7 +152,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* License Info */}
         <div className="border-t border-primary-foreground/20 pt-6 mb-6">
           <div className="text-center text-sm text-primary-foreground/70">
             <p className="mb-2">
@@ -142,14 +162,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-6">
           <div className="text-center text-sm text-primary-foreground/70">
             <p>
               © {currentYear}{" "}
               {t(
                 "الرعد الثاقب لتجارة الديزل ش.ذ.م.م - جميع الحقوق محفوظة",
-                "ALRAAD ALTHAQEB Diesel Fuel Trading L.L.C - All Rights Reserved"
+                "ALRAAD ALTHAQEB Diesel Fuel Trading L.L.C - All Rights Reserved",
               )}
             </p>
           </div>
@@ -159,4 +178,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(FooterComponent);

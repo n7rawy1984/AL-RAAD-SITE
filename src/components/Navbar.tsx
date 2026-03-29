@@ -1,11 +1,11 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
-const Navbar = () => {
+const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -32,6 +32,7 @@ const Navbar = () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
+
   useEffect(() => {
     setIsOpen(false);
     document.body.style.overflow = "auto";
@@ -42,11 +43,13 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Active section
+  // Active section - أخف وأهدأ
   useEffect(() => {
     if (location.pathname !== "/") {
       setActive("blog");
@@ -54,24 +57,42 @@ const Navbar = () => {
     }
 
     const sections = ["home", "about", "services", "sectors", "contact"];
+    const elements = sections
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -50% 0px" },
-    );
+    if (!elements.length) return;
 
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    let ticking = false;
 
-    return () => observer.disconnect();
+    const updateActiveSection = () => {
+      let current = "home";
+      const triggerPoint = window.innerHeight * 0.35;
+
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= triggerPoint) {
+          current = el.id;
+        }
+      });
+
+      setActive((prev) => (prev === current ? prev : current));
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateActiveSection);
+        ticking = true;
+      }
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [location.pathname]);
 
   const scrollToSection = (id: string) => {
@@ -107,7 +128,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Overlay - خلفية ضبابية خفيفة */}
       <div
         className={`fixed inset-0 bg-black/40 backdrop-blur-md z-[45] md:hidden transition-all duration-500 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -115,7 +135,6 @@ const Navbar = () => {
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Mobile Drawer - شفافة وعصرية */}
       <div
         className={`fixed top-0 ${
           isArabic ? "right-0" : "left-0"
@@ -131,11 +150,9 @@ const Navbar = () => {
         } md:hidden`}
       >
         <div className="flex flex-col h-full p-8">
-          {/* Header مع زر اللغة */}
           <div className="flex justify-between items-center mb-12">
             <img src={logo} className="h-10" alt="Logo" />
             <div className="flex items-center gap-4">
-              {/* زر اللغة في الموبايل */}
               <button
                 onClick={toggleLanguage}
                 className="px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm 
@@ -144,6 +161,7 @@ const Navbar = () => {
               >
                 {isArabic ? "EN" : "AR"}
               </button>
+
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-1 rounded-lg text-white/80 hover:text-[hsl(var(--accent))] 
@@ -154,9 +172,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Links مع تأثيرات حركية */}
           <div
-            className={`flex flex-col gap-6 ${isArabic ? "text-right" : "text-left"}`}
+            className={`flex flex-col gap-6 ${
+              isArabic ? "text-right" : "text-left"
+            }`}
           >
             {navItems.map((item, index) => (
               <button
@@ -185,7 +204,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Footer مع معلومات إضافية */}
           <div className="mt-auto pt-10 border-t border-white/10">
             <p className="text-white/40 text-xs text-center">
               {isArabic
@@ -196,7 +214,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Navbar - شفافية فقط عند السكرول */}
       <nav
         className={`fixed top-0 w-full z-40 transition-all duration-500 ${
           scrolled
@@ -205,7 +222,6 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          {/* Logo + Name */}
           <Link to="/" className="flex items-center gap-2 group">
             <img src={logo} className="h-10" alt="Logo" />
             <div>
@@ -218,7 +234,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex gap-8 items-center">
             {navItems.map((item) => (
               <button
@@ -240,9 +255,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right */}
           <div className="flex items-center gap-3">
-            {/* Desktop Language - مع أيقونة الجلوبال */}
             <button
               onClick={toggleLanguage}
               className="hidden md:flex items-center gap-2 font-bold text-white hover:text-[hsl(var(--accent))] transition-colors duration-300"
@@ -251,7 +264,6 @@ const Navbar = () => {
               <span>{isArabic ? "EN" : "AR"}</span>
             </button>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(true)}
               className="md:hidden text-white hover:text-[hsl(var(--accent))] transition-colors"
@@ -262,7 +274,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* إضافة أنيميشن للقائمة */}
       <style>{`
         @keyframes slideIn {
           from {
@@ -279,4 +290,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default React.memo(NavbarComponent);

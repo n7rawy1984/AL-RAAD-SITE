@@ -62,13 +62,13 @@ const Blog = () => {
               <div className="relative h-64 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 z-10"></div>
                 <img
-                  src="/images/raad-small.webp"
-                  srcSet="/images/raad-small.webp 600w, /images/raad.webp 1200w"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  src="/images/raad.webp"
                   alt={post.title}
+                  width="800"
+                  height="600"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 will-change-transform group-hover:scale-110 shadow-none hover:shadow-none"
                 />
                 <div className="absolute top-5 right-5 z-20">
                   <span

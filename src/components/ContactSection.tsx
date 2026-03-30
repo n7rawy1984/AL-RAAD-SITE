@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  MessageCircle,
+  Facebook,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -128,6 +135,7 @@ const ContactSection = () => {
           </div>
 
           <div className="space-y-4">
+            {/* Phone */}
             <a
               href="tel:+971555677114"
               className="flex items-start gap-4 p-4 rounded-lg bg-card border border-transparent hover:border-[#ffcc33]/30 transition-colors group"
@@ -145,6 +153,8 @@ const ContactSection = () => {
                 </p>
               </div>
             </a>
+
+            {/* Email */}
             <a
               href="mailto:alraad247@gmail.com"
               className="flex items-start gap-4 p-4 rounded-lg bg-card border border-transparent hover:border-[#ffcc33]/30 transition-colors group"
@@ -156,6 +166,37 @@ const ContactSection = () => {
                 </h4>
                 <p className="group-hover:text-[#ffcc33] transition-colors">
                   alraad247@gmail.com
+                </p>
+              </div>
+            </a>
+
+            {/* Address 🔥 */}
+            <div className="flex items-start gap-4 p-4 rounded-lg bg-card border border-transparent hover:border-[#ffcc33]/30 transition-colors group">
+              <MapPin className="h-6 w-6 text-[#ffcc33]" />
+              <div>
+                <h4 className="font-bold text-primary">
+                  {t("العنوان", "Address")}
+                </h4>
+                <p className="group-hover:text-[#ffcc33] transition-colors">
+                  أبو ظبي، منطقة المفرق الصناعية
+                  <br />
+                  الإمارات العربية المتحدة
+                </p>
+              </div>
+            </div>
+
+            {/* Facebook 🔥 */}
+            <a
+              href="https://www.facebook.com/alraad.diesel/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-4 rounded-lg bg-card border border-transparent hover:border-[#ffcc33]/30 transition-colors group"
+            >
+              <Facebook className="h-6 w-6 text-[#ffcc33]" />
+              <div>
+                <h4 className="font-bold text-primary">Facebook</h4>
+                <p className="group-hover:text-[#ffcc33] transition-colors">
+                  alraad.diesel
                 </p>
               </div>
             </a>

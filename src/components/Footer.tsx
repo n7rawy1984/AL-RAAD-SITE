@@ -40,7 +40,9 @@ const FooterComponent = () => {
 
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/alraad.diesel/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-accent/20 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 <Facebook className="h-5 w-5" />

@@ -59,20 +59,24 @@ const Blog = () => {
               // لاحظ إضافة md: قبل الـ hover عشان ميتفعلش غير على الكمبيوتر بس
             >
               {/* حاوية الصورة */}
-              <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 z-10"></div>
-                <img
-                  src="/images/raad.webp"
-                  alt={post.title}
-                  width="800"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 will-change-transform group-hover:scale-110 shadow-none hover:shadow-none"
-                />
-                <div className="absolute top-5 right-5 z-20">
+              <div className="relative flex justify-center pt-6 pb-4">
+                {/* الخلفية الخفيفة */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 z-0 rounded-t-2xl"></div>
+
+                {/* الصورة الدائرية */}
+                <div className="relative z-10 w-36 h-36 rounded-full overflow-hidden  shadow-xl">
+                  <img
+                    src={post.image}
+                    alt={post.imageAlt}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+
+                {/* البادج */}
+                <div className="absolute top-2 right-2 z-20">
                   <span
-                    className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] shadow-2xl ${
+                    className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.1em] shadow-lg ${
                       post.category === "tip"
                         ? "bg-gold text-primary-dark"
                         : "bg-accent text-white"

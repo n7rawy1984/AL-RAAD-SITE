@@ -1,6 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   Phone,
   Mail,
@@ -10,8 +11,8 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
-
 const FooterComponent = () => {
+  const location = useLocation();
   const { t } = useLanguage();
   const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
@@ -99,7 +100,21 @@ const FooterComponent = () => {
                       if (link.isPage) {
                         navigate("/blog");
                       } else {
-                        scrollToSection(link.id);
+                        if (location.pathname !== "/") {
+                          navigate("/");
+
+                          setTimeout(() => {
+                            const element = document.getElementById(link.id);
+                            if (element) {
+                              element.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }, 100);
+                        } else {
+                          const element = document.getElementById(link.id);
+                          if (element) {
+                            element.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }
                       }
                     }}
                     className="text-primary-foreground/80 hover:text-accent transition-colors"

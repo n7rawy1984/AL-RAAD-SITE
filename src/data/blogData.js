@@ -2602,8 +2602,29 @@ function buildKeywords(post) {
   return `${map[post.category] || ""}, ${common}`;
 }
 
+function buildImage(post) {
+  return `/images/${post.slug}.webp`;
+}
+
 function buildOgImage(post) {
-  return `https://alraad-althaqeb.com/images/${post.slug}.jpg`;
+  return `https://www.alraad-althaqeb.com/images/${post.slug}.webp`;
+}
+
+function buildImageAlt(post) {
+  const title = normalizeText(post.title || "");
+
+  const categoryMap = {
+    service: "توريد ديزل في دبي والإمارات",
+    guide: "دليل توريد الديزل في الإمارات",
+    location: "خدمة توريد ديزل في مواقع العمل بالإمارات",
+    article: "خدمات وتوريد ديزل 10PPM في الإمارات",
+    tip: "نصيحة مهمة حول الديزل والمولدات وخزانات الوقود",
+  };
+
+  const suffix =
+    categoryMap[post.category] || "توريد ديزل 10PPM في دبي والإمارات";
+
+  return `${title} - ${suffix}`;
 }
 
 export const posts = rawPosts.map((post) => {
@@ -2616,6 +2637,8 @@ export const posts = rawPosts.map((post) => {
     keywords: buildKeywords(post),
     datePublished: post.datePublished || isoDate,
     dateModified: post.dateModified || isoDate,
-    ogImage: post.ogImage || buildOgImage(post),
+    image: buildImage(post),
+    imageAlt: buildImageAlt(post),
+    ogImage: buildOgImage(post),
   };
 });

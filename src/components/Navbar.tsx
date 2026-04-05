@@ -222,7 +222,15 @@ const NavbarComponent = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link
+            to="/"
+            onClick={() => {
+              if (location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="flex items-center gap-2 group"
+          >
             <img src={logo} className="h-10" alt="Logo" />
             <div>
               <h1 className="text-sm md:text-xl font-bold text-white leading-tight">

@@ -17,7 +17,8 @@ const HeroSection = () => {
       id="home"
       className="pt-16 relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 z-0">
+      {/* Background layers should never block clicks */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src={heroImage}
           alt="شاحنة توريد ديزل في الإمارات"
@@ -41,9 +42,15 @@ const HeroSection = () => {
               )}
             </span>
           </h1>
+
           <div className="inline-block bg-gold/20 border border-gold text-gold px-4 py-2 rounded-full text-sm font-bold mb-4">
-            🔥 احصل على أفضل سعر ديزل في الإمارات اليوم فقط
+            🔥{" "}
+            {t(
+              "احصل على أفضل سعر ديزل في الإمارات اليوم فقط",
+              "Get the best diesel price in the UAE today only",
+            )}
           </div>
+
           <p className="text-sm text-gray-200 mb-4 font-medium">
             {t(
               "نخدم جميع إمارات الدولة | استجابة سريعة | ديزل 10 PPM",
@@ -94,6 +101,7 @@ const HeroSection = () => {
               {t("اتصل بنا الآن", "Call Us Now")}
             </a>
           </div>
+
           <div className="flex flex-wrap justify-center gap-9 mt-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-6 max-w-xl mx-auto">
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-gold">
@@ -123,6 +131,7 @@ const HeroSection = () => {
               <div className="text-sm text-slate-300">عميل راضٍ</div>
             </div>
           </div>
+
           <p className="text-md text-slate-400 mb-6 mt-4">
             {t(
               "متاح 24/7 • عرض سعر سريع • تغطية جميع الإمارات",

@@ -7,6 +7,7 @@ import {
   Send,
   MessageCircle,
   Facebook,
+  Linkedin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -200,10 +201,25 @@ const ContactSection = () => {
                 </p>
               </div>
             </a>
+            <a
+              href="https://www.linkedin.com/in/ahmed-alraad-209157401/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-4 rounded-lg bg-card border border-transparent hover:border-[#ffcc33]/30 transition-colors group"
+            >
+              <Linkedin className="h-6 w-6 text-[#ffcc33]" />
+              <div>
+                <h4 className="font-bold text-primary">LinkedIn</h4>
+                <p className="group-hover:text-[#ffcc33] transition-colors">
+                  Ahmed Alraad
+                </p>
+              </div>
+            </a>
           </div>
         </div>
 
-        <div className="animate-slide-in-right">
+        <div className="animate-slide-in-right space-y-6">
+          {" "}
           <form
             onSubmit={handleSubmit}
             className="bg-card rounded-2xl p-8 shadow-lg border border-white/5 space-y-6"
@@ -274,6 +290,37 @@ const ContactSection = () => {
                 : t("اطلب عرض السعر الآن", "Get a Quote Now")}
             </Button>
           </form>
+          <div className="mt-6 bg-card rounded-2xl p-4 shadow-lg border border-white/5 overflow-hidden">
+            <div className="flex items-center gap-2 mb-3">
+              <MapPin className="h-5 w-5 text-[#ffcc33]" />
+              <h4 className="font-bold text-primary">
+                {t("موقعنا على الخريطة", "Our Location on Map")}
+              </h4>
+            </div>
+
+            <div className="rounded-xl overflow-hidden border border-[#ffcc33]/20">
+              <iframe
+                title="ALRAAD ALTHAQEB Location"
+                src="https://maps.google.com/maps?q=24.2884045,54.57407&z=16&output=embed"
+                width="100%"
+                height="320"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+
+            <a
+              href="https://www.google.com/maps/place/24%C2%B017'18.3%22N+54%C2%B034'26.7%22E/@24.2880171,54.5777931,16.42z/data=!4m4!3m3!8m2!3d24.2884045!4d54.57407?hl=ar&entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#ffcc33] transition-colors"
+            >
+              <MapPin className="h-4 w-4" />
+              {t("فتح الموقع في خرائط جوجل", "Open in Google Maps")}
+            </a>
+          </div>
         </div>
       </div>
     </section>

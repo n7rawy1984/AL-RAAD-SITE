@@ -55,7 +55,9 @@ const FooterComponent = () => {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/ahmed-alraad-209157401/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-accent/20 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 <Linkedin className="h-5 w-5" />
@@ -148,7 +150,7 @@ const FooterComponent = () => {
                 className="flex items-start gap-2 text-primary-foreground/80 hover:text-accent transition-colors"
               >
                 <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span dir="ltr">+971 544099266</span>
+                <span dir="ltr">+971 555677114</span>
               </a>
 
               <a

@@ -1,59 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Home -->
-  <url><loc>https://alraad-althaqeb.com/</loc><priority>1.0</priority></url>
+  <url>
+    <loc>https://alraad-althaqeb.com/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-  <!-- Blog -->
-  <url><loc>https://alraad-althaqeb.com/blog</loc><priority>0.9</priority></url>
+  <url>
+    <loc>https://alraad-althaqeb.com/blog</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- All Articles -->
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/diesel-supply-dubai-24-7</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-supply-dubai-24-7</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-supply-for-construction-sites-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/fleet-diesel-supply-dubai-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/bulk-diesel-supply-for-factories-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/emergency-diesel-delivery-dubai-24-7</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-price-dubai-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/generator-diesel-supply-for-events-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/how-to-choose-diesel-supplier-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-storage-safety-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-vs-petrol-cost-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-supply-jebel-ali-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-supply-guide-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-price-uae-today</loc></url>
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/diesel-supply-for-construction-sites-dubai</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <url><loc>https://alraad-althaqeb.com/blog/best-diesel-delivery-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-supply-construction-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-price-per-gallon-uae-today</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/euro-5-diesel-jebel-ali-free-zone</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/bulk-diesel-supply-industrial-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/emergency-diesel-supply-dubai-24-7</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/generator-diesel-dubai-events</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-fuel-specifications-uae-10ppm</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-trading-companies-dubai-reputable</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/heavy-equipment-diesel-dubai-contracts</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-price-analysis-uae-2026</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/environmental-impact-low-sulfur-diesel</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-fleet-management-tips</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-generator-maintenance-guide</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-fuel-logistics-challenges-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-quality-tests-10ppm</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-fuel-tax-uae-businesses</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-vs-gasoline-comparison-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-fuel-storage-tanks-safety</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-fuel-future-uae-2030</loc></url>
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/fleet-diesel-supply-dubai-uae</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- Tips -->
-  <url><loc>https://alraad-althaqeb.com/blog/original-vs-adulterated-diesel-10ppm-guide</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/fuel-tank-maintenance-cleaning-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/prevent-diesel-fuel-contamination-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/optimize-diesel-consumption-fleet-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-fuel-filtering-importance-uae</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/how-to-detect-diesel-meter-tampering-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-storage-safety-rules-construction-sites</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/protect-diesel-generators-overheating-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/diesel-contamination-water-detection-dubai</loc></url>
-  <url><loc>https://alraad-althaqeb.com/blog/check-fuel-meter-accuracy-dubai-supplies</loc></url>
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/bulk-diesel-supply-for-factories-dubai</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/emergency-diesel-delivery-dubai-24-7</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/diesel-price-uae-today</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/generator-diesel-supply-for-events-dubai</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/how-to-choose-diesel-supplier-dubai</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/diesel-storage-safety-uae</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/diesel-vs-petrol-cost-uae</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/diesel-supply-jebel-ali-dubai</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alraad-althaqeb.com/blog/diesel-supply-guide-uae</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>

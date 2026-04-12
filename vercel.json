@@ -1,4 +1,31 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/best-diesel-delivery-dubai",
+      "destination": "/blog/diesel-supply-dubai-24-7",
+      "permanent": true
+    },
+    {
+      "source": "/blog/diesel-supply-construction-dubai",
+      "destination": "/blog/diesel-supply-for-construction-sites-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/emergency-diesel-supply-dubai-24-7",
+      "destination": "/blog/emergency-diesel-delivery-dubai-24-7",
+      "permanent": true
+    },
+    {
+      "source": "/blog/diesel-price-dubai-uae",
+      "destination": "/blog/diesel-price-uae-today",
+      "permanent": true
+    },
+    {
+      "source": "/blog/diesel-price-per-gallon-uae-today",
+      "destination": "/blog/diesel-price-uae-today",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

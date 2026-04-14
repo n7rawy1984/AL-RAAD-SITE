@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
   <head>
     <!-- Google Analytics -->
     <script
@@ -18,58 +18,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- مهم: العنوان والوصف من Helmet -->
-
+    <!-- ✅ SEO الأساسي -->
+    <title>
+      الرعد الثاقب لتجارة الوقود | توريد ديزل 10 PPM في دبي والإمارات
+    </title>
+    <meta
+      name="description"
+      content="شركة الرعد الثاقب لتجارة الديزل - توريد وتوصيل ديزل 10 PPM في دبي وجميع الإمارات. خدمة 24/7 بأسعار تنافسية."
+    />
     <meta name="author" content="ALRAAD ALTHAQEB Diesel Fuel Trading L.L.C" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Canonical -->
+    <!-- ✅ Canonical -->
     <link rel="canonical" href="https://www.alraad-althaqeb.com/" />
 
-    <!-- Open Graph (Fallback) -->
+    <!-- ✅ Open Graph كامل -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.alraad-althaqeb.com/" />
     <meta
+      property="og:title"
+      content="الرعد الثاقب لتجارة الوقود | ديزل 10 PPM الإمارات"
+    />
+    <meta
+      property="og:description"
+      content="توريد وتوصيل ديزل 10 PPM في دبي وجميع الإمارات. خدمة 24/7 بأسعار تنافسية."
+    />
+    <meta
       property="og:image"
-      content="https://www.alraad-althaqeb.com/favicon-512.ico"
+      content="https://www.alraad-althaqeb.com/favicon-512.png"
     />
     <meta property="og:locale" content="ar_AE" />
     <meta property="og:locale:alternate" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- ✅ Twitter Card كامل -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="الرعد الثاقب لتجارة الوقود | ديزل 10 PPM الإمارات"
+    />
+    <meta
+      name="twitter:description"
+      content="توريد وتوصيل ديزل 10 PPM في دبي وجميع الإمارات. خدمة 24/7."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.alraad-althaqeb.com/favicon-512.png"
+    />
 
-    <!-- ===================================== -->
-    <!-- ✅ FAVICONS (المهم جدًا) -->
-    <!-- ===================================== -->
-
-    <!-- الافتراضي -->
+    <!-- ✅ Favicons بامتدادات صحيحة -->
     <link rel="icon" href="/favicon.ico" />
-
-    <!-- PNG sizes -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.ico" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.ico" />
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.ico" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.ico" />
-    <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.ico" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.ico" />
-    <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.ico" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.ico" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <!-- Apple -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.ico" />
-
-    <!-- Android / PWA -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- ===================================== -->
-    <!-- ✅ SCHEMA -->
-    <!-- ===================================== -->
-
-    <!-- Organization -->
+    <!-- ✅ Schema - Organization -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -77,13 +84,18 @@
         "name": "ALRAAD ALTHAQEB Diesel Fuel Trading L.L.C",
         "alternateName": "شركة الرعد الثاقب لتجارة الوقود",
         "url": "https://www.alraad-althaqeb.com/",
-        "logo": "https://www.alraad-althaqeb.com/favicon-512.ico",
+        "logo": "https://www.alraad-althaqeb.com/favicon-512.png",
         "description": "توريد الديزل 10 PPM في دبي وجميع الإمارات مع توصيل سريع 24/7",
-        "areaServed": "AE"
+        "areaServed": "AE",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": ["Arabic", "English"]
+        }
       }
     </script>
 
-    <!-- WebSite -->
+    <!-- ✅ Schema - WebSite -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -94,7 +106,6 @@
       }
     </script>
   </head>
-
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
